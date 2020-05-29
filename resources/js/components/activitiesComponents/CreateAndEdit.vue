@@ -117,17 +117,17 @@
         created() {
             let loader = this.loading();
             this.activity.status = '';
-            let uri = 'http://127.0.0.1:8000/api/statusActivities';
+            let uri = 'http://webhookprueb.herokuapp.com/api/statusActivities';
             this.axios.get(uri).then(async response => {
                 this.itemsStatusActivities = await response.data;
             });
-            let uriEmployees = 'http://127.0.0.1:8000/api/employees';
+            let uriEmployees = 'http://webhookprueb.herokuapp.com/api/employees';
             this.axios.get(uriEmployees).then(async response => {
                 this.itemsEmployees = await response.data;
             });
             this.paramId=this.$route.params.id;
             if (typeof this.paramId !== "undefined") {
-                let uriParam = `http://127.0.0.1:8000/api/activities/${this.paramId}`;
+                let uriParam = `http://webhookprueb.herokuapp.com/api/activities/${this.paramId}`;
                 this.axios.get(uriParam).then(async (response) => {
                     let objResp= await response.data;
                     this.activity.name = objResp[0].name;
@@ -184,7 +184,7 @@
             },
             updateActivity() {
                 let loader = this.loading();
-                let uri = `http://127.0.0.1:8000/api/activities/${this.paramId}`;
+                let uri = `http://webhookprueb.herokuapp.com/api/activities/${this.paramId}`;
                 this.activity.date_execute = this.fromDateVal;
                 let dataPost = {activity_info_basic:this.activity};
                 this.axios.put(uri, dataPost).then((response) => {
@@ -205,7 +205,7 @@
             },
             addNewActivity() {
                 let loader = this.loading();
-                let uri = `http://127.0.0.1:8000/api/activities`;
+                let uri = `http://webhookprueb.herokuapp.com/api/activities`;
                 this.activity.date_execute = this.fromDateVal;
                 let dataPost = {activity_info_basic:this.activity};
                 this.axios.post(uri, dataPost).then((response) => {

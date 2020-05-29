@@ -2086,7 +2086,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var loader = this.loading();
     this.activity.status = '';
-    var uri = 'http://127.0.0.1:8000/api/statusActivities';
+    var uri = 'http://webhookprueb.herokuapp.com/api/statusActivities';
     this.axios.get(uri).then( /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(response) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
@@ -2111,7 +2111,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return _ref.apply(this, arguments);
       };
     }());
-    var uriEmployees = 'http://127.0.0.1:8000/api/employees';
+    var uriEmployees = 'http://webhookprueb.herokuapp.com/api/employees';
     this.axios.get(uriEmployees).then( /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(response) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
@@ -2139,7 +2139,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.paramId = this.$route.params.id;
 
     if (typeof this.paramId !== "undefined") {
-      var uriParam = "http://127.0.0.1:8000/api/activities/".concat(this.paramId);
+      var uriParam = "http://webhookprueb.herokuapp.com/api/activities/".concat(this.paramId);
       this.axios.get(uriParam).then( /*#__PURE__*/function () {
         var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(response) {
           var objResp;
@@ -2229,7 +2229,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       var loader = this.loading();
-      var uri = "http://127.0.0.1:8000/api/activities/".concat(this.paramId);
+      var uri = "http://webhookprueb.herokuapp.com/api/activities/".concat(this.paramId);
       this.activity.date_execute = this.fromDateVal;
       var dataPost = {
         activity_info_basic: this.activity
@@ -2256,7 +2256,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this3 = this;
 
       var loader = this.loading();
-      var uri = "http://127.0.0.1:8000/api/activities";
+      var uri = "http://webhookprueb.herokuapp.com/api/activities";
       this.activity.date_execute = this.fromDateVal;
       var dataPost = {
         activity_info_basic: this.activity
@@ -2351,7 +2351,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var app = this;
     var loader = this.loading();
-    var uri = 'http://127.0.0.1:8000/api/activities';
+    var uri = 'http://webhookprueb.herokuapp.com/activities';
     this.axios.get(uri).then(function (response) {
       _this.dataActivities = response.data;
       loader.hide();
@@ -2385,7 +2385,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var loader = this.loading();
-      var uri_delete = "https://hotelesdecameronweb.herokuapp.com/api/hotel/".concat(id);
+      var uri_delete = "http://hotelesdecameronweb.herokuapp.com/api/hotel/".concat(id);
       this.axios["delete"](uri_delete).then(function (response) {
         _this2.dataActivities.splice(_this2.dataActivities.indexOf(id), 1);
 
@@ -100552,8 +100552,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\activitiesExecute\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\activitiesExecute\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\registerAndStatusActivities\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\registerAndStatusActivities\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
