@@ -55,7 +55,7 @@
         created() {
             var app = this;
             let loader = this.loading();
-            let uri = 'http://127.0.0.1:8000/api/activities';
+            let uri = 'http://webhookprueb.herokuapp.com/activities';
             this.axios.get(uri).then(response => {
                 this.dataActivities = response.data;
                 loader.hide();
@@ -90,7 +90,7 @@
             },
             removeHotel(id){
                 let loader = this.loading();
-                let uri_delete = `https://hotelesdecameronweb.herokuapp.com/api/hotel/${id}`;
+                let uri_delete = `http://hotelesdecameronweb.herokuapp.com/api/hotel/${id}`;
                 this.axios.delete(uri_delete).then(response => {
                     this.dataActivities.splice(this.dataActivities.indexOf(id), 1);
                     loader.hide();
