@@ -113,7 +113,8 @@ class ActivitiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Activities::where('id_activities','=',$id)->delete();
+        return response()->json('successfully deleted');
     }
 
     public function getOptionStatusActivities(){
