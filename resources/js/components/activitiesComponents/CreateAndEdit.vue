@@ -117,17 +117,17 @@
         created() {
             let loader = this.loading();
             this.activity.status = '';
-            let uri = 'http://webhookprueb.herokuapp.com/api/statusActivities';
+            let uri = 'https://webhookprueb.herokuapp.com/api/statusActivities';
             this.axios.get(uri).then(async response => {
                 this.itemsStatusActivities = await response.data;
             });
-            let uriEmployees = 'http://webhookprueb.herokuapp.com/api/employees';
+            let uriEmployees = 'https://webhookprueb.herokuapp.com/api/employees';
             this.axios.get(uriEmployees).then(async response => {
                 this.itemsEmployees = await response.data;
             });
             this.paramId=this.$route.params.id;
             if (typeof this.paramId !== "undefined") {
-                let uriParam = `http://webhookprueb.herokuapp.com/api/activities/${this.paramId}`;
+                let uriParam = `https://webhookprueb.herokuapp.com/api/activities/${this.paramId}`;
                 this.axios.get(uriParam).then(async (response) => {
                     let objResp= await response.data;
                     this.activity.name = objResp[0].name;
@@ -184,7 +184,7 @@
             },
             updateActivity() {
                 let loader = this.loading();
-                let uri = `http://webhookprueb.herokuapp.com/api/activities/${this.paramId}`;
+                let uri = `https://webhookprueb.herokuapp.com/api/activities/${this.paramId}`;
                 this.activity.date_execute = this.fromDateVal;
                 let dataPost = {activity_info_basic:this.activity};
                 this.axios.put(uri, dataPost).then((response) => {
@@ -205,7 +205,7 @@
             },
             addNewActivity() {
                 let loader = this.loading();
-                let uri = `http://webhookprueb.herokuapp.com/api/activities`;
+                let uri = `https://webhookprueb.herokuapp.com/api/activities`;
                 this.activity.date_execute = this.fromDateVal;
                 let dataPost = {activity_info_basic:this.activity};
                 this.axios.post(uri, dataPost).then((response) => {
